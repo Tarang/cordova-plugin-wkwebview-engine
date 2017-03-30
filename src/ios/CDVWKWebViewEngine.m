@@ -288,6 +288,8 @@ static void * KVOContext = &KVOContext;
 
     wkWebView.scrollView.scrollEnabled = [settings cordovaFloatSettingForKey:@"ScrollEnabled" defaultValue:YES];
 
+    BOOL keyboardDisplayRequiresUserAction = [settings cordovaBoolSettingForKey:@"KeyboardDisplayRequiresUserAction" defaultValue:YES];
+    
     if (!keyboardDisplayRequiresUserAction) {
         SEL sel = sel_getUid("_startAssistingNode:userIsInteracting:blurPreviousNode:userObject:");
         Class WKContentView = NSClassFromString(@"WKContentView");
